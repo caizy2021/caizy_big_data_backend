@@ -1,5 +1,10 @@
 const express = require("express");
 const app = express();
+// 设置跨域
+app.use('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  next()
+})
 
 // 引用路由文件
 const chart1 = require("./router/item1.js");
